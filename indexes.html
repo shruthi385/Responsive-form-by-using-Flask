@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Index</title>
+     <link rel="stylesheet" href="{{ url_for('static',filename='stylelogin3.css')}}">
+</head>
+<body>
+      <div class="container">
+        <center>
+        <img src="{{user_image}}" alt="" class="image" width="100px;" height="100px;">  
+    </center>
+    <div class="container" style="background: linear-gradient(135deg, #71b7e6, #9b59b6);">
+                <form action="/login" method="POST" autocomplete="off">
+                   
+                  <div class="title"><legend>LOGIN</legend></div>
+                  <br>  
+
+                    <div class="content">
+                  
+
+
+                     {% with messages = get_flashed_messages(with_categories=true) %}
+                {% if messages %}
+                    {% for category,message in messages %}
+                        <div class="alert alert-{{category}}">{{message}}</div>
+                    {% endfor %}
+                {% endif %}
+                {% endwith %}
+                <center>
+                <div class="user-details">
+                 
+                     <br>
+                    <div class="input-box">
+                        <label>USERNAME</label>
+                        <input type="text" name="name" class="form-control" required>
+                    </div>
+                    <div class="input-box">
+                        <label>PASSWORD</label>
+                        <input type="password" name="password" class="form-control" required>
+                     </center>
+                    </div>
+                  
+                    <div class="button">
+                        <input type="submit" value="Login" class="button"><br>
+                      
+                    </div>
+                     <footer>
+            <center>
+                <br>
+                <div class="login">If You Don't have account
+                 <a href="{{url_for('register')}}" class="button">Register</a>
+                </div>
+            </center>
+            </footer>
+                      
+                </form>
+                    </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,73 @@
+<html>
+<head>
+    <title>Registration</title>
+     <link rel="stylesheet" href="{{ url_for('static',filename='stylelogin3.css')}}">
+</head>
+<body>
+     <div class="container">
+        <center>
+        <img src="{{user_image}}" alt="" class="image" width="100px;" height="100px;">
+    </center>
+   
+    <div class="container" style="background: linear-gradient(135deg, #71b7e6, #9b59b6);">
+
+     <div class="title"><legend>Registration</legend></div>
+     <br>
+        <div class="content">
+    <form method="POST" action="/register">
+               
+        <div class="user-details">
+            
+            <div class="input-box">             
+              <span class="details">NAME:</span>
+              <input type="text" class="details" name="name" required>
+            </div>
+
+            <div class="input-box">   
+              <span class="details">PASSWORD:</span>
+              <input type="password" class="details" name="password" required>
+            </div>
+
+            <div class="input-box">
+                <span class="details">ADDRESS:</span>
+                <input type="text" class="details" name="address" required></textarea>
+            </div>
+
+           <div class="input-box">
+                <span class="details">DEPT:</span>
+                <input type="text" class="details" name="dept" required></textarea>
+           </div>
+
+           <div class="input-box">
+                <span class="details">CONTACT</span>
+                <input type="text" class="details" name="contact" required>
+            </div>
+
+          <div class="input-box">
+                <span class="details">E-MAIL</span>
+                <input type="text" class="details" name="mail" required>
+          </div>   
+
+    </fieldset>  
+</div>
+
+ <div class="button" style="width: 580px; height: 40px;">
+
+    <input type="submit" value="REGISTER" class="button">
+                      
+</div>
+        <br>     
+<footer> 
+    <center>
+          <div class="login">If You have already account
+          <a href="{{url_for('login')}}" class="button">LOGIN</a>
+          </div>
+    </center>
+</footer>                            
+    </form>
+</div>
+        </div>   
+ </div>
+</div>
+</body>
+</html>
